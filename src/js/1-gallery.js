@@ -92,16 +92,14 @@ function showGallery() {
 showGallery();
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  overlay: true,
-  // overlayOpacity: 0.7,
+  
   captions: true,
   captionType: 'attr',
   captionsData: 'alt',
   captionPosition: 'bottom',
-  // widthRatio: 0.8,
-  // heightRatio: 0.9,
   captionSelector: "img",
   captionDelay: 250,
+  ScrollZoom: false,
 });
 
-lightbox.on(show.simplelightbox);
+lightbox.on("show.simplelightbox");
