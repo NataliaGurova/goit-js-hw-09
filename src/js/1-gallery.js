@@ -64,6 +64,9 @@ const images = [
   },
 ];
 
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.esm";
+
 const gallery = document.querySelector(".gallery");
 
 
@@ -88,41 +91,17 @@ function showGallery() {
 
 showGallery();
 
+const lightbox = new SimpleLightbox('.gallery a', {
+  overlay: true,
+  // overlayOpacity: 0.7,
+  captions: true,
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  // widthRatio: 0.8,
+  // heightRatio: 0.9,
+  captionSelector: "img",
+  captionDelay: 250,
+});
 
-
-// gallery.addEventListener("click", handleGalleryClick);
-
-// function handleGalleryClick(e) {
-//   e.preventDefault();
-//   if (e.target === e.currentTarget) return;
-
-//   const originalGalleryItem = e.target.dataset.source;
-//   const image = images.find((el) => el.original === originalGalleryItem);
-
-//   showGalleryModal(image);
-// }
-
-// function showGalleryModal(image) {
-//   const { original, description } = image;
-//   const modal = basicLightbox.create(`
-//     <img src="${original}" alt="${description}" width="1112" height="640">
-//   `,
-
-//   {
-//       onShow: () => {
-//         document.addEventListener('keydown', closeGalleryModal);
-//       },
-	
-//       onClose: () => {
-//         document.removeEventListener('keydown', closeGalleryModal);
-//       }
-//   });
-  
-//   modal.show();
-//   function closeGalleryModal(e) {
-//   if (e.code === 'Escape') {
-//       modal.close();
-//     }
-//   }  
-// }
-
+lightbox.on(show.simplelightbox);
