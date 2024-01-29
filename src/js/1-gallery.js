@@ -69,7 +69,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector(".gallery");
 
-
 function showGallery() {
   const previewGallery = images
     .map(({ preview, original, description }) => {
@@ -92,7 +91,6 @@ function showGallery() {
 showGallery();
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  
   captions: true,
   captionType: 'attr',
   captionsData: 'alt',
